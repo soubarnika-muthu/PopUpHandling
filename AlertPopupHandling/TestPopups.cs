@@ -27,5 +27,10 @@ namespace AlertPopupHandling
         {
             Action.DoAction.JS_Dismiss();
         }
+        [Test, Order(3)]
+        public void test_Promt()
+        {
+            Action.DoAction.JS_Promt();
+        }
     }
 }

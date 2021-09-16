@@ -60,5 +60,29 @@ namespace AlertPopupHandling.Action
                 Console.WriteLine("Dismiss Test Successful");
             }
         }
+        public static void JS_Promt()
+        {
+            //Creating the instance of the class
+            AlertPopup alert = new AlertPopup(driver);
+            //To select the button 
+            alert.jsPrompt.Click();
+            System.Threading.Thread.Sleep(2000);
+            //Accept the confirm button 
+            var alert_win = driver.SwitchTo().Alert();
+            alert_win.SendKeys("confirm as Soubarnika");
+            alert_win.Accept();
+            System.Threading.Thread.Sleep(2000);
+            // checking for validation 
+            Console.WriteLine(alert.clicktheResult.Text);
+            if (alert.clicktheResult.Text == "You entered: confirm as Soubarnika")
+            {
+                Console.WriteLine("Accept Text is successful");
+
+            }
+            else
+            {
+                Console.WriteLine("Not Successful");
+            }
+        }
     }
 }

@@ -31,12 +31,12 @@ namespace AlertPopupHandling.Base
         public void start_Browser()
         {
             // Configuring Log4Net
-           // BasicConfigurator.Configure();
+            // BasicConfigurator.Configure();
             // Valid XML file with Log4Net Configurations
-           var fileInfo = new FileInfo(@"Log4net.config");
+             var fileInfo = new FileInfo(@"Log4net.config");
 
             // Configure default logging repository with Log4Net configurations
-           log4net.Config.XmlConfigurator.Configure(repository, fileInfo);
+              log4net.Config.XmlConfigurator.Configure(repository, fileInfo);
             try
             {
                 log.Info("Entering Setup");
