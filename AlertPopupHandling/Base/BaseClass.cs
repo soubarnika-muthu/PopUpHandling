@@ -1,36 +1,35 @@
-﻿/*Project = Popup Handling
+﻿/*Project = AlertPopup Handling
  * created by = Soubarnika Muthu
- * dated on = 13/09/21
+ * dated on = 14/09/21
  */
+
 
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-
 namespace AlertPopupHandling.Base
 {
     public class BaseClass
     {
-        public string testurl = "https://the-internet.herokuapp.com/javascript_alerts";
-        public IWebDriver driver;
+        //Webdriver interface
+        public static IWebDriver driver;
 
         [SetUp]
         public void start_Browser()
         {
-
-            ChromeOptions options = new ChromeOptions();
-            options.AddArgument("Start-Maximized");
-            options.AddArgument("headless");
-
-            //local selenium webdriver
+            //Creating an instance webdriver
             driver = new ChromeDriver();
+            // To maximize browser
             driver.Manage().Window.Maximize();
-            System.Threading.Thread.Sleep(2000);
+            System.Threading.Thread.Sleep(200);
+            //opens the url
+            driver.Url = "https://the-internet.herokuapp.com/javascript_alerts";
         }
         [TearDown]
         public void close_Browser()
         {
+            //closing the browser
             driver.Quit();
         }
 
