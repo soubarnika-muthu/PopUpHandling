@@ -15,6 +15,7 @@ namespace AlertPopupHandling.Action
             //creating instance of AlertPopup class
             AlertPopup alert = new AlertPopup(driver);
             alert.jsAlert.Click();
+           
             System.Threading.Thread.Sleep(2000);
             // Switching to Alert  and Capturing alert message.
             var alert_win = driver.SwitchTo().Alert();
